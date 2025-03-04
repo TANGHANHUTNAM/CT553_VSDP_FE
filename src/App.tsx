@@ -1,9 +1,13 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { RouterProvider } from "react-router-dom";
 import { ConfigProvider } from "antd";
-import { Toaster } from "react-hot-toast";
 import viVN from "antd/es/locale/vi_VN";
+import { Toaster } from "react-hot-toast";
+import { RouterProvider } from "react-router-dom";
+import {
+  GLOBAL_COLOR,
+  GLOBAL_COLOR_ERROR,
+  GLOBAL_COLOR_SUCCESS,
+} from "./constant/colorCustomize";
 import router from "./router";
 
 function App() {
@@ -19,7 +23,17 @@ function App() {
     <>
       <QueryClientProvider client={queryClient}>
         {/* <ReactQueryDevtools initialIsOpen={false} /> */}
-        <ConfigProvider locale={viVN}>
+        <ConfigProvider
+          locale={viVN}
+          theme={{
+            token: {
+              colorPrimary: GLOBAL_COLOR,
+              colorSuccess: GLOBAL_COLOR_SUCCESS,
+              colorError: GLOBAL_COLOR_ERROR,
+              borderRadius: 4,
+            },
+          }}
+        >
           <RouterProvider router={router} />
         </ConfigProvider>
         <Toaster
@@ -34,16 +48,18 @@ function App() {
             style: {
               paddingInline: 20,
               borderRadius: 4,
+
               fontSize: "1rem",
+              maxWidth: "calc(100vw - 40px)",
             },
             success: {
               style: {
-                color: "#61D345",
+                color: GLOBAL_COLOR_SUCCESS,
               },
             },
             error: {
               style: {
-                color: "#FF4B4B",
+                color: GLOBAL_COLOR_ERROR,
               },
             },
           }}

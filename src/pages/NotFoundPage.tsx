@@ -1,9 +1,10 @@
 import { Button, Result } from "antd";
 import { Link } from "react-router-dom";
 import { useDynamicTitle, useScrollTop } from "../hooks";
+import { ROUTER_INDEX } from "../constant/routerConstant";
 
 const NotFoundPage: React.FC = () => {
-  useDynamicTitle("404 Not Found");
+  useDynamicTitle(ROUTER_INDEX.NotFoundPage.title);
   useScrollTop();
   return (
     <div className="dark:bg-dark-900 flex min-h-screen items-center justify-center">
