@@ -27,4 +27,8 @@ export const ROUTER_INDEX = {
     router: "/scholarship-search",
     title: "Tra cứu học bổng",
   },
+  SubmitFormPage: {
+    router: "/share-link/:formId",
+    title: "Biểu mẫu nộp",
+  },
 };

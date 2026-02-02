@@ -17,13 +17,11 @@ import { IResponse } from "../../interface/response";
 import { submitFormScholarshipService } from "../../services/apply";
 import logo from "../../assets/logo.png";
 
-interface IScholarshipApplicationFormProps {
+interface IApplyFormProps {
   formScholarship: IFormResponse | null;
 }
 
-const ScholarshipApplicationForm: React.FC<
-  IScholarshipApplicationFormProps
-> = ({ formScholarship }) => {
+const ApplyForm: React.FC<IApplyFormProps> = ({ formScholarship }) => {
   const [form] = Form.useForm();
   const formSections = formScholarship?.form_sections || [];
   const [currentStep, setCurrentStep] = useState<number>(0);
@@ -64,6 +62,7 @@ const ScholarshipApplicationForm: React.FC<
       const fieldsToValidate = getFieldsToValidate();
       await form.validateFields(fieldsToValidate);
       setCurrentStep(currentStep + 1);
+      window.scrollTo(0, 0);
     } catch (error) {
       toast.error("Vui lòng điền đầy đủ thông tin");
       console.log("Validation failed:", error);
@@ -150,7 +149,7 @@ const ScholarshipApplicationForm: React.FC<
         setCurrentStep(0);
       }
       if (data && data.error) {
-        toast.error(data.error as string);
+        toast.error(data.message as string);
       }
     },
     onError: () => {
@@ -237,11 +236,11 @@ const ScholarshipApplicationForm: React.FC<
           className="mt-4 flex w-full flex-col items-center justify-center text-base font-semibold"
         >
           <img src={logo} alt="logo" className="h-[60px]" />
-          <div>@FormBuilder</div>
+          <div>@E-Form Builder</div>
         </div>
       </div>
     </div>
   );
 };
 
-export default ScholarshipApplicationForm;
+export default ApplyForm;

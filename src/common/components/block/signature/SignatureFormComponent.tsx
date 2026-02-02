@@ -157,7 +157,7 @@ const SignatureFormComponent = ({
           ref={signatureRef}
           penColor="black"
           canvasProps={{
-            className: "w-2/3 border border-gray-300 cursor-default",
+            className: "border border-gray-300 cursor-default w-2/3",
           }}
           clearOnResize={false}
         />

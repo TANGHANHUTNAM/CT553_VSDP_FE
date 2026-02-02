@@ -4,8 +4,8 @@ const NotFoundScholarship: React.FC = () => {
   return (
     <Result
       status="404"
-      title="Không tìm thấy học bổng"
-      subTitle="Đơn đăng ký học bổng đã hết hạn hoặc không tồn tại. Hẹn trở lại lần sau!"
+      title="Không tìm biểu mẫu"
+      subTitle="Biểu mẫu đã hết hạn hoặc không tồn tại. Vui lòng kiểm tra lại!"
     />
   );
 };

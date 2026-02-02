@@ -8,7 +8,7 @@ const Content: React.FC = () => {
         <div className="name-program text-center text-5xl font-bold uppercase text-black/75">
           CHƯƠNG TRÌNH PHÁT TRIỂN SINH VIÊN VIETHOPE (VSDP)
         </div>
-        <div className="content mt-10">
+        <div className="content mt-10 p-3">
           <p className="pb-2 font-medium">Xin chào các bạn!</p>
           <p className="pb-2">
             Trên chặng đường thực hiện sứ mệnh vì một tương lai giáo dục tốt đẹp

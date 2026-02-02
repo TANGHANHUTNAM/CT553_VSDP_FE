@@ -6,7 +6,7 @@ import { IResponse } from "../interface/response";
 import { IFormResponse } from "../interface/apply";
 import { getFormScholarshipService } from "../services/apply";
 import LoadingComponent from "../common/components/LoadingComponent";
-import ScholarshipApplicationForm from "../features/apply/ScholarshipApplicationForm";
+import ScholarshipApplicationForm from "../features/apply/ApplyForm";
 
 const ApplyPage: React.FC = () => {
   useDynamicTitle(ROUTER_INDEX.ApplyPage.title);

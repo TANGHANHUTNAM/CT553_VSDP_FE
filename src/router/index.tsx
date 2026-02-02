@@ -8,6 +8,7 @@ import InformationPage from "../pages/InformationPage";
 import CriteriaPage from "../pages/CriteriaPage";
 import ScholarshipSearchPage from "../pages/ScholarshipSearchPage";
 import { ROUTER_INDEX } from "../constant/routerConstant";
+import SubmitFormPage from "../pages/SubmitFormPage";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         element: <ScholarshipSearchPage />,
       },
     ],
+  },
+  {
+    path: ROUTER_INDEX.SubmitFormPage.router,
+    element: <SubmitFormPage />,
   },
   {
     path: ROUTER_INDEX.NotFoundPage.router,
